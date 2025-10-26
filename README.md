@@ -31,3 +31,8 @@ React implementation of the Stage 2 Multi-Framework Ticket Web App.
 
 ## Known issues
 - This is a client-only mock (no backend). Session expiry is simulated with an optional `expires` field.
+
+
+live demo: https://ticket-master-react.netlify.app/
+git repo: https://github.com/SamuelOnyedikachi/ticket-master-react.git
+
