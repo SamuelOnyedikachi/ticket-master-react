@@ -3,97 +3,110 @@ import { Link } from 'react-router-dom';
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-600 to-sky-500 text-white">
-      <header className="max-w-[1440px] mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="text-2xl font-bold">TicketMaster</div>
-        <div className="flex items-center gap-4">
-          <Link to="/auth/login" className="text-white/90">
-            Login
-          </Link>
-          <Link
-            to="/auth/signup"
-            className="bg-white text-indigo-600 px-4 py-2 rounded"
-          >
-            Get started
-          </Link>
-        </div>
-      </header>
+    <>
+      {/* === HERO SECTION === */}
+      <div className="min-h-[70vh] bg-gradient-to-br from-indigo-600 to-sky-500 text-white flex flex-col">
+        {/* --- Header --- */}
+        <header className="w-full  top-0 left-0 z-50 shadow-sm sticky bg-gradient-to-br from-indigo-600 to-sky-500">
+          <div className="max-w-[1440px] mx-auto px-10 py-6 flex items-center justify-between">
+            {/* Logo */}
+            <div className="text-2xl font-extrabold text-white tracking-wide">
+              Ticket<span className="text-sky-200">Master</span>
+            </div>
 
-      <main className="max-w-[1440px] mx-auto px-6 py-16 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h1 className="text-4xl font-extrabold mb-4">
-            Manage tickets faster. Ship happier.
-          </h1>
-          <p className="mb-6 text-white/90">
-            A compact ticket management app for the Stage 2 multi-framework task
-            — responsive and accessible.
-          </p>
-          <div className="flex gap-3">
-            <Link
-              to="/auth/login"
-              className="px-4 py-2 bg-white/90 text-indigo-700 rounded font-semibold"
-            >
-              Login
-            </Link>
-            <Link
-              to="/auth/signup"
-              className="px-4 py-2 border border-white/40 rounded"
-            >
-              Sign up
-            </Link>
+            {/* Navigation */}
+            <div className="flex items-center gap-8">
+              <Link
+                to="/auth/login"
+                className="text-white/90 hover:text-white font-medium transition-colors duration-200"
+              >
+                Login
+              </Link>
+              <Link
+                to="/auth/signup"
+                className="bg-white text-indigo-700 px-5 py-2 rounded-lg font-semibold hover:bg-sky-100 transition-all duration-200"
+              >
+                Get started
+              </Link>
+            </div>
           </div>
-        </div>
+        </header>
 
-        <div className="relative">
-          <div className="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-white/10 blur-lg" />
-          <div className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full bg-white/10 blur-lg" />
-          <div className="bg-white/10 p-6 rounded-xl">
-            <h3 className="font-semibold">Quick demo card</h3>
-            <p className="text-sm mt-2">
-              Create tickets, update statuses, and move to trash. Works offline
-              (localStorage).
+        {/* --- Hero Content --- */}
+        <main className="flex-grow max-w-[1440px] mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">
+              Manage tickets faster. <br /> Ship happier.
+            </h1>
+            <p className="mb-8 text-white/90 text-lg leading-relaxed">
+              A compact ticket management app built for efficiency and
+              accessibility. Streamline your workflow and stay organized with
+              TicketMaster.
             </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/auth/login"
+                className="px-5 py-2.5 bg-white text-indigo-700 rounded font-semibold hover:bg-gray-100 transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                to="/auth/signup"
+                className="px-5 py-2.5 border border-white/40 rounded hover:bg-white/10 transition-colors"
+              >
+                Sign up
+              </Link>
+            </div>
           </div>
-        </div>
-      </main>
 
-      <div className="relative">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="w-full h-32"
-        >
-          <path
-            d="M0,0 V40 C150,120 350,0 600,40 C850,80 1050,40 1200,20 V0z"
-            fill="#ffffff"
-            opacity="0.12"
-          ></path>
-          <path
-            d="M0,0 V30 C150,90 350,10 600,50 C850,90 1050,40 1200,20 V0z"
-            fill="#ffffff"
-            opacity="0.08"
-          ></path>
-        </svg>
+          <div className="relative">
+            <div className="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-white/10 blur-xl" />
+            <div className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full bg-white/10 blur-lg" />
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-lg">
+              <h3 className="font-semibold text-xl mb-2">Quick demo card</h3>
+              <p className="text-sm text-white/90 leading-relaxed">
+                Create tickets, update statuses, and move to trash — all stored
+                locally for offline use.
+              </p>
+            </div>
+          </div>
+        </main>
       </div>
 
-      <section className="max-w-[1440px] mx-auto px-6 py-12 bg-gray-50 text-gray-800">
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white shadow rounded-lg p-6">
-            <h4 className="font-semibold">Fast CRUD</h4>
-            <p className="text-sm mt-2">Create and manage tickets easily.</p>
-          </div>
-          <div className="bg-white shadow rounded-lg p-6">
-            <h4 className="font-semibold">Protected Routes</h4>
-            <p className="text-sm mt-2">
-              Session-based authentication using localStorage.
+      {/* === FEATURES SECTION === */}
+      <section className="max-w-[1440px] mx-auto px-6 py-16 bg-gray-50 text-gray-800">
+        <h2 className="text-3xl font-bold text-center mb-10">
+          Why choose TicketMaster?
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+            <h4 className="font-semibold text-xl mb-2">⚡ Fast CRUD</h4>
+            <p className="text-sm text-gray-600">
+              Create, read, update, and delete tickets easily with a responsive
+              UI.
             </p>
           </div>
-          <div className="bg-white shadow rounded-lg p-6">
-            <h4 className="font-semibold">Responsive</h4>
-            <p className="text-sm mt-2">Mobile and desktop friendly.</p>
+          <div className="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+            <h4 className="font-semibold text-xl mb-2">🔒 Protected Routes</h4>
+            <p className="text-sm text-gray-600">
+              Session-based authentication ensures secure and private access.
+            </p>
+          </div>
+          <div className="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+            <h4 className="font-semibold text-xl mb-2">📱 Responsive Design</h4>
+            <p className="text-sm text-gray-600">
+              Enjoy a seamless experience on desktop, tablet, and mobile.
+            </p>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* === FOOTER === */}
+      <footer className="bg-gray-100 border-t border-gray-50">
+        <div className="max-w-[1440px] mx-auto px-6 py-6 text-center text-sm text-gray-600">
+          &copy; {new Date().getFullYear()} TicketMaster. All rights reserved.
+        </div>
+      </footer>
+    </>
   );
 }

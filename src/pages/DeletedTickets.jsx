@@ -12,14 +12,14 @@ export default function DeletedTickets() {
       ) : (
         <div className="grid md:grid-cols-3 gap-4">
           {deleted.map((d) => (
-            <div key={d.id} className="bg-white p-4 rounded shadow">
-              <div className="flex justify-between items-start">
+            <div key={d.id} className="bg-white p-10 rounded shadow">
+              <div className="flex justify-between py-4 items-start">
                 <h3 className="font-semibold">{d.title}</h3>
                 <span className="text-xs text-gray-400">
                   {new Date(d.deletedAt).toLocaleString()}
                 </span>
               </div>
-              <p className="text-sm text-gray-600 mt-2">{d.description}</p>
+              <p className="text-sm text-gray-600 my-3">{d.description}</p>
               <div className="mt-3 flex gap-2">
                 <button
                   onClick={() => restoreTicket(d.id)}

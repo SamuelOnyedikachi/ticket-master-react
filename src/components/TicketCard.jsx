@@ -21,14 +21,14 @@ export default function TicketCard({ ticket, onEdit, onDelete }) {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
+    <div className="bg-white/80 px-8 py-15 rounded-lg shadow">
       <div className="flex justify-between items-start gap-4">
         <div className="flex-1">
           {!editing ? (
             <>
-              <h3 className="font-semibold text-lg">{ticket.title}</h3>
+              <h3 className="font-semibold text-[16px]">{ticket.title}</h3>
               <span
-                className={`inline-block mt-2 px-2 py-0.5 rounded text-xs ${
+                className={`inline-block mt-2 px-2 py-0.5 rounded text-[10px] ${
                   statusClass[ticket.status]
                 }`}
               >
@@ -67,7 +67,7 @@ export default function TicketCard({ ticket, onEdit, onDelete }) {
       </div>
 
       {!editing ? (
-        <p className="text-sm text-gray-600 mt-3">{ticket.description}</p>
+        <p className="text-[12px] text-gray-600 mt-3">{ticket.description}</p>
       ) : (
         <textarea
           className="w-full border rounded p-2 mt-3"
